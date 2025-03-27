@@ -1,4 +1,6 @@
-import Image from "next/image";
+import Image from "next/image"
+import { DisplayMsgBtn } from './DisplayMsgBtn'
+import Script from 'next/script'
 
 export default function Home() {
   return (
@@ -12,17 +14,21 @@ export default function Home() {
           height={38}
           priority
         />
+
+        {/* Optionally, you can download wasm.svg to public folder or delete here */}
         <div className='text-[4rem]'>/</div>
         <Image
           src="/wasm.svg"
-          alt="Next.js logo"
+          alt="WASM logo"
           width={90}
           height={90}
           priority
         />
       </div>
       <main className='text-white text-2xl font-[500]'>
+        <Script src="/hello.js" />
+        <DisplayMsgBtn />
       </main>
     </div>
-  );
+  )
 }
